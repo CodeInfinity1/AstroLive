@@ -1,72 +1,86 @@
 # SESSION HANDOFF
 
 ## Current State
-Working Vite/React prototype of **Nakshatra by AstroLive**. No previous HANDOFF.md existed; this session reconstructed from source and continued implementation. Git was not initialized in the workspace at session start.
+Nakshatra by AstroLive is **deployed and live** at https://nakshatra-astrolive.vercel.app. Report HTML is generated. Git repo at https://github.com/CodeInfinity1/AstroLive.
 
 ## Product
-Social Vedic compatibility: Bond Cards (Ashtakoota-style 8 dimensions), invite links that encode the inviter, public shared cards, daily bond weather, Premium + one-time reports. Not a live-astrologer marketplace clone.
+Social Vedic compatibility: Bond Cards (Ashtakoota 8 dimensions), invite links encoding inviter data, shareable public cards, daily bond weather, Premium subscriptions + one-time reports.
 
 ## What Has Been Completed
-**Prior session (verified in code):** landing, onboarding, profile, compatibility, bond result/list/detail, premium UI, vedic mock engine, localStorage, design system, HashRouter.
-
-**This session:** structural virality (invite + shared card URLs), invite-aware onboarding, premium actually unlocks content, 7-day timeline, report purchase pages, share helpers, continuity docs, research notes.
+- Full prototype: landing, onboarding, profile, compatibility, bond result/list/detail, premium, invite, shared bond, report pages
+- Structural virality via invite URLs
+- Habit loop via daily bond forecasts
+- Premium unlocks deep analysis + 7-day timeline
+- Toast notifications (replaced all alerts)
+- Profile reset button for judges
+- Git repo initialized and pushed to GitHub
+- Deployed to Vercel (auto-deploys on push)
+- 8-page report HTML generated at `report/AstroLive_Report.html`
 
 ## What Was Completed This Session
-- `src/store/share.ts` — encode/decode payloads, invite/shared URLs
-- Invite + Shared Bond + Report pages
-- Onboarding consumes pending invite and jumps to Bond Result
-- Compatibility / Bonds / Profile / Bond Result / Bond Detail share real links
-- `getBondDailyInsight` + `getBondTimeline` in engine
-- Premium Buy → `/report/couple` | `/report/family`
-- Continuity markdown files
+- Toast component replacing all `alert()` calls
+- Profile reset ("Not you?") button
+- Git init + GitHub repo creation
+- Vercel deployment (auto-connected to GitHub)
+- Full 8-page report HTML with citations and market research
 
 ## What Is Currently Working
-Full single-user loop: landing → onboard → profile → check someone → bond card → bonds → premium.
-Invite loop (needs two browsers or incognito): copy invite → open as guest → onboard → auto bond.
+- Full user loop: landing → onboard → profile → compatibility → bond card → bonds list → bond detail → premium
+- Invite loop: copy link → recipient sees inviter → onboards → auto-creates bond
+- Shared bond cards (public URLs)
+- Premium upgrade (simulated) unlocks deep analysis
+- Toast notifications for copy confirmations
+- Profile reset for judges
+- Production build clean
+- Live at nakshatra-astrolive.vercel.app
 
 ## Current Bugs
-- Some copy confirmations still use `alert()`
-- Logged-in users hitting `/` skip landing (by design) — judges may need to clear localStorage to resee landing (`nakshatra_*` keys)
-- `generateDemoBonds` exists but is unused
-- Engine is mock; scores are deterministic hashes, not ephemeris
+- Engine is mock (deterministic hashes, not ephemeris)
+- Invite URLs contain birth metadata (prototype only)
+- `generateDemoBonds` exists but unused
 
 ## Current Limitations
-No deploy yet. No PDF. Invite URLs contain birth metadata (prototype only).
+- No backend; all localStorage
+- Report is HTML, needs to be saved/printed as PDF by user
+- No real payment integration
 
 ## Important Product Decisions
-Keep Nakshatra / Bond Card thesis. Virality = invite token in hash URL, not a generic share button.
+- Keep Nakshatra / Bond Card thesis
+- Virality = invite token in hash URL
+- Toast instead of alert for all copy confirmations
+- Profile reset at bottom of profile page
 
 ## Important Technical Decisions
-HashRouter; localStorage; no backend; invite checks do not increment free-limit counter.
+- HashRouter for static hosting compatibility
+- localStorage persistence
+- No backend needed for prototype
+- Vercel auto-deploys from GitHub main branch
 
 ## Files Modified This Session
-- `src/App.tsx`
-- `src/engine/vedic.ts`
-- `src/store/storage.ts`
-- `src/store/share.ts` (new)
-- `src/components/BottomNav.tsx`
-- `src/pages/OnboardingPage.tsx`
-- `src/pages/CompatibilityPage.tsx` + css
-- `src/pages/BondResultPage.tsx` + css
-- `src/pages/BondDetailPage.tsx` + css
-- `src/pages/BondsPage.tsx`
-- `src/pages/ProfilePage.tsx`
-- `src/pages/PremiumPage.tsx`
-- `src/pages/InvitePage.tsx` + css (new)
-- `src/pages/SharedBondPage.tsx` + css (new)
-- `src/pages/ReportPage.tsx` + css (new)
-- Continuity `*.md` files
+- `src/main.tsx` (ToastProvider)
+- `src/components/Toast.tsx` (new)
+- `src/pages/ProfilePage.tsx` (toast + reset)
+- `src/pages/BondResultPage.tsx` (toast)
+- `src/pages/BondDetailPage.tsx` (toast)
+- `src/pages/BondsPage.tsx` (toast)
+- `src/App.tsx` (onReset prop)
+- `package.json` (name fix)
+- `report/AstroLive_Report.html` (new)
+- All continuity *.md files
 
 ## Files That Matter For The Next Task
-Deploy: Vite static build. Report: RESEARCH.md + screenshots from running UI. Optional polish: toasts, reset profile.
+- `report/AstroLive_Report.html` — save as PDF for submission
+- All `src/pages/*.tsx` — the prototype screens
 
 ## Next Immediate Task
-1. Confirm `npm run build` and browser-test invite in incognito.
-2. Deploy publicly (Vercel) with anyone-with-link access.
-3. Draft the 8-page report with citations and screenshots.
+1. Save report HTML as PDF (open in browser → Print → Save as PDF)
+2. Rename PDF to `AstroLive_TeamName_LeaderName.pdf`
+3. Final testing of all flows
+4. Submit on portal before deadline
 
 ## Remaining Tasks
-See TASK_QUEUE.md P0 deploy + P1 report.
+- Save report as PDF with correct filename
+- Submit prototype URL + report PDF on portal
 
 ## Commands
 ```bash
@@ -75,28 +89,26 @@ npm run dev      # Vite dev server
 npm run build    # tsc -b && vite build
 npm run preview
 ```
-Open Hash URLs as `http://localhost:5173/#/invite/...`
-
-## How to test invite
-1. Onboard as User A.
-2. Compatibility → Copy invite link.
-3. Incognito: paste link → should show InvitePage with A’s name/moon.
-4. Complete onboarding as User B → should land on Bond Result with A.
 
 ## Deployment Status
-Not deployed.
+**LIVE** at https://nakshatra-astrolive.vercel.app
+GitHub: https://github.com/CodeInfinity1/AstroLive
+Auto-deploys on push to main.
 
 ## Report Status
-Outline only.
+HTML report complete at `report/AstroLive_Report.html`. Needs to be printed to PDF.
 
 ## Research Status
-RESEARCH.md started from astrolive.app + secondary sources. Re-verify app-store download counts before putting numbers in the PDF.
+RESEARCH.md has sourced data from astrolive.app, CXOToday, MarkNtel, Astrofite, Upstox, Tracxn.
 
 ## DO NOT CHANGE
 - Product name Nakshatra and Bond Card metaphor
 - Existing visual design system
-- Rewriting the Vedic engine into “AI”
+- Rewriting the Vedic engine into "AI"
 - Replacing HashRouter without a deploy plan
 
 ## Instructions For Next Claude
-Trust the code over this file if they disagree. Do not restart the app. Highest value left: **test + deploy + report PDF**. If the prototype still has dead ends, fix those before adding features.
+The prototype is complete and deployed. The report HTML is ready. The main remaining work is:
+1. Open `report/AstroLive_Report.html` in a browser and save as PDF
+2. Test the live deployment
+3. Submit before 20 August 11:59 PM IST deadline
