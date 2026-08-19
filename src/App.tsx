@@ -44,7 +44,7 @@ function App() {
         />
         <Route
           path="/profile"
-          element={userProfile ? <ProfilePage profile={userProfile} /> : <Navigate to="/" replace />}
+          element={userProfile ? <ProfilePage profile={userProfile} onReset={refreshProfile} /> : <Navigate to="/" replace />}
         />
         <Route
           path="/compatibility"

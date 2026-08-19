@@ -3,6 +3,7 @@ import type { VedicProfile } from '../engine/vedic';
 import { getZodiacSymbol, getDailyForecast, getWeeklyTheme } from '../engine/vedic';
 import { getBonds } from '../store/storage';
 import { birthToInvite, copyText, inviteUrl, shareOrCopy } from '../store/share';
+import { useToast } from '../components/Toast';
 import './BondsPage.css';
 
 interface BondsPageProps {
@@ -11,6 +12,7 @@ interface BondsPageProps {
 
 export default function BondsPage({ userProfile }: BondsPageProps) {
   const navigate = useNavigate();
+  const toast = useToast();
   const bonds = getBonds();
   const dailyForecast = getDailyForecast(userProfile);
   const weeklyTheme = getWeeklyTheme(userProfile);
@@ -108,7 +110,7 @@ export default function BondsPage({ userProfile }: BondsPageProps) {
             );
             if (result === 'copied') {
               await copyText(url);
-              alert('Invite link copied — they land on your Bond invite, not a generic homepage.');
+              toast('Invite link copied ✦');
             }
           }}>
             Invite Friends →

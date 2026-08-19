@@ -3,6 +3,7 @@ import type { VedicProfile } from '../engine/vedic';
 import { getBondDailyInsight, getBondTimeline, getZodiacSymbol } from '../engine/vedic';
 import { getBondById, isPremium } from '../store/storage';
 import { birthToInvite, shareOrCopy, sharedBondUrl } from '../store/share';
+import { useToast } from '../components/Toast';
 import ScoreRing from '../components/ScoreRing';
 import './BondDetailPage.css';
 
@@ -13,6 +14,7 @@ interface BondDetailPageProps {
 export default function BondDetailPage({ userProfile }: BondDetailPageProps) {
   const { bondId } = useParams();
   const navigate = useNavigate();
+  const toast = useToast();
   const bond = getBondById(bondId || '');
 
   if (!bond) {
@@ -41,7 +43,7 @@ export default function BondDetailPage({ userProfile }: BondDetailPageProps) {
       `${userProfile.birthData.name} × ${otherProfile.birthData.name} — ${compatibility.overallScore}% · ${compatibility.bondType}`,
       url
     );
-    if (result === 'copied') alert('Bond Card link copied.');
+    if (result === 'copied') toast('Bond Card link copied ✦');
   };
 
   return (

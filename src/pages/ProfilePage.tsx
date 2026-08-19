@@ -2,14 +2,18 @@ import { useNavigate } from 'react-router-dom';
 import type { VedicProfile } from '../engine/vedic';
 import { getZodiacSymbol, getNakshatraRuler, getDailyForecast, getWeeklyTheme } from '../engine/vedic';
 import { birthToInvite, inviteUrl, shareOrCopy } from '../store/share';
+import { clearAllData } from '../store/storage';
+import { useToast } from '../components/Toast';
 import './ProfilePage.css';
 
 interface ProfilePageProps {
   profile: VedicProfile;
+  onReset: () => void;
 }
 
-export default function ProfilePage({ profile }: ProfilePageProps) {
+export default function ProfilePage({ profile, onReset }: ProfilePageProps) {
   const navigate = useNavigate();
+  const toast = useToast();
   const dailyForecast = getDailyForecast(profile);
   const weeklyTheme = getWeeklyTheme(profile);
 
@@ -18,7 +22,7 @@ export default function ProfilePage({ profile }: ProfilePageProps) {
     const shareText = `✦ My Cosmic Profile ✦\n\n${getZodiacSymbol(profile.moonSign)} Moon: ${profile.moonSign}\n⭐ Nakshatra: ${profile.nakshatra}\n${getZodiacSymbol(profile.sunSign)} Sun: ${profile.sunSign}\n${getZodiacSymbol(profile.ascendant)} Ascendant: ${profile.ascendant}\n\nSee our Bond Card:`;
     
     const result = await shareOrCopy('My Cosmic Profile — Nakshatra', shareText, url);
-    if (result === 'copied') alert('Invite link copied — friends land on your Bond invite.');
+    if (result === 'copied') toast('Invite link copied ✦');
   };
 
   return (
@@ -138,6 +142,23 @@ export default function ProfilePage({ profile }: ProfilePageProps) {
             onClick={() => navigate('/compatibility')}
           >
             Check Compatibility ✦
+          </button>
+        </div>
+
+        {/* Reset */}
+        <div style={{ marginTop: 32, textAlign: 'center' }}>
+          <button
+            className="btn btn-sm"
+            style={{ color: 'var(--text-muted)', fontSize: '0.75rem', opacity: 0.6 }}
+            onClick={() => {
+              if (confirm('Reset all data and start fresh?')) {
+                clearAllData();
+                onReset();
+                navigate('/');
+              }
+            }}
+          >
+            Not you? Reset profile
           </button>
         </div>
       </div>

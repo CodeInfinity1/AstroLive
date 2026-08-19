@@ -3,6 +3,7 @@ import type { VedicProfile } from '../engine/vedic';
 import { getBondDailyInsight, getZodiacSymbol } from '../engine/vedic';
 import { getBondById, isPremium } from '../store/storage';
 import { birthToInvite, shareOrCopy, sharedBondUrl } from '../store/share';
+import { useToast } from '../components/Toast';
 import ScoreRing from '../components/ScoreRing';
 import './BondResultPage.css';
 
@@ -13,6 +14,7 @@ interface BondResultPageProps {
 export default function BondResultPage({ userProfile }: BondResultPageProps) {
   const { bondId } = useParams();
   const navigate = useNavigate();
+  const toast = useToast();
   const bond = getBondById(bondId || '');
 
   if (!bond) {
@@ -40,7 +42,7 @@ export default function BondResultPage({ userProfile }: BondResultPageProps) {
     const shareText = `${userProfile.birthData.name} ${getZodiacSymbol(userProfile.moonSign)} × ${otherProfile.birthData.name} ${getZodiacSymbol(otherProfile.moonSign)} — ${compatibility.overallScore}% · ${compatibility.bondType}`;
     const result = await shareOrCopy('Our Cosmic Bond — Nakshatra', shareText, url);
     if (result === 'copied') {
-      alert('Bond Card link copied — anyone with the link can open it.');
+      toast('Bond Card link copied ✦');
     }
   };
 
