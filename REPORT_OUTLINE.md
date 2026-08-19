@@ -32,4 +32,4 @@ Minimum 8 pages. Prototype screenshots from the running app. Cite RESEARCH.md so
 - [ ] Report page
 
 ## Status
-Not drafted as PDF. Research notes ready. Prototype is the current priority.
+PDF generated at `submission/AstroLive_TeamName_LeaderName.pdf` from `report/AstroLive_Report.html`. Screenshots captured from the prototype on 19 Aug 2026. Team/leader names remain placeholders.

@@ -67,6 +67,14 @@
   margin-bottom: var(--space-xl);
 }
 
+.bonds-empty-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 320px;
+  margin: 0 auto;
+}
+
 /* List */
 .bonds-list-title {
   font-size: 0.75rem;
@@ -182,4 +190,27 @@
   font-size: 0.82rem;
   color: var(--text-secondary);
   margin-bottom: var(--space-lg);
+}
+
+.bonds-weather-header {
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.bond-list-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .bonds-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+  }
+
+  .bonds-list-title {
+    grid-column: 1 / -1;
+  }
 }

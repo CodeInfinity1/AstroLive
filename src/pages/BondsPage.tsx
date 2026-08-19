@@ -54,11 +54,27 @@ export default function BondsPage({ userProfile }: BondsPageProps) {
         {bonds.length === 0 ? (
           <div className="bonds-empty">
             <span className="bonds-empty-icon">⬡</span>
-            <h3>No bonds yet</h3>
-            <p>Check compatibility with someone to create your first cosmic bond</p>
-            <button className="btn btn-primary" onClick={() => navigate('/compatibility')}>
-              Check Compatibility ✦
-            </button>
+            <h3>No Bond Cards yet</h3>
+            <p>The viral path is an invite: they onboard to unlock your Bond Card. You can also enter their birth details yourself.</p>
+            <div className="bonds-empty-actions">
+              <button className="btn btn-primary" onClick={async () => {
+                const url = inviteUrl(birthToInvite(userProfile.birthData));
+                const result = await shareOrCopy(
+                  'Join Nakshatra',
+                  `${userProfile.birthData.name} invited you to see your Vedic Bond Card on Nakshatra by AstroLive.`,
+                  url
+                );
+                if (result === 'copied') {
+                  await copyText(url);
+                  toast('Invite link copied ✦');
+                }
+              }}>
+                Invite someone →
+              </button>
+              <button className="btn btn-secondary" onClick={() => navigate('/compatibility')}>
+                Enter their details
+              </button>
+            </div>
           </div>
         ) : (
           <div className="bonds-list">

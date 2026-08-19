@@ -91,6 +91,8 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 a {
@@ -139,7 +141,14 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  padding: 0 var(--space-md);
+  padding: 0 max(var(--space-md), env(safe-area-inset-left));
+  padding-right: max(var(--space-md), env(safe-area-inset-right));
+}
+
+.landing-page .container,
+.invite-page .container,
+.shared-bond-page .container {
+  max-width: 560px;
 }
 
 .page {
@@ -190,6 +199,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   gap: var(--space-sm);
   padding: 14px 28px;
+  min-height: 44px;
   border-radius: var(--radius-full);
   font-family: var(--font-display);
   font-weight: 600;
@@ -197,6 +207,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+}
+
+.btn:focus-visible,
+.nav-item:focus-visible,
+.input-field:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
 }
 
 .btn-primary {
@@ -495,34 +512,99 @@ select.input-field {
 }
 
 /* ---- Responsive ---- */
+@media (max-width: 360px) {
+  html {
+    font-size: 15px;
+  }
+
+  .landing-features {
+    grid-template-columns: 1fr;
+  }
+
+  .compat-form-row {
+    flex-direction: column;
+  }
+
+  .landing-title {
+    font-size: 1.55rem;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
-    max-width: 520px;
+    max-width: 680px;
+  }
+
+  .landing-page .container,
+  .invite-page .container,
+  .shared-bond-page .container {
+    max-width: 740px;
+  }
+
+  .nav-bottom-inner {
+    max-width: 680px;
+  }
+
+  .detail-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
   }
 }
 
 @media (min-width: 1024px) {
-  .container {
-    max-width: 480px;
-  }
-  
   body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background: 
-      radial-gradient(ellipse at 20% 50%, rgba(232,168,73,0.03) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 50%, rgba(192,107,90,0.03) 0%, transparent 50%),
+    background:
+      radial-gradient(ellipse at 12% 20%, rgba(232,168,73,0.05) 0%, transparent 42%),
+      radial-gradient(ellipse at 88% 80%, rgba(192,107,90,0.04) 0%, transparent 46%),
       var(--bg-primary);
   }
-  
+
   #root {
     width: 100%;
-    max-width: 480px;
+    max-width: none;
     min-height: 100vh;
-    border-left: 1px solid var(--border-subtle);
-    border-right: 1px solid var(--border-subtle);
-    position: relative;
+    border: none;
+  }
+
+  .container {
+    max-width: 860px;
+  }
+
+  .landing-page .container {
+    max-width: 1120px;
+  }
+
+  .invite-page .container,
+  .shared-bond-page .container {
+    max-width: 640px;
+  }
+
+  .nav-bottom-inner {
+    max-width: 860px;
+  }
+
+  .cosmic-card-main {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .premium-page .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: 920px;
+  }
+
+  .landing-page .container {
+    max-width: 1180px;
+  }
+
+  .nav-bottom-inner {
+    max-width: 920px;
   }
 }
 

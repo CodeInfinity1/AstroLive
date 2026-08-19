@@ -131,6 +131,11 @@
   gap: var(--space-md);
 }
 
+.compat-form-row > * {
+  flex: 1;
+  min-width: 0;
+}
+
 .compat-submit:disabled {
   opacity: 0.4;
   cursor: not-allowed;

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620">
+  <rect width="1100" height="620" fill="#0A0A0F"/>
+  <text x="40" y="48" fill="#E8A849" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700">Nakshatra architecture (prototype)</text>
+  <text x="40" y="74" fill="#9A9AAE" font-family="Inter, system-ui, sans-serif" font-size="13">Static Vite app · HashRouter · localStorage · URL-encoded invites</text>
+  <rect x="40" y="110" width="240" height="120" rx="12" fill="#16161F" stroke="#E8A849" stroke-opacity="0.35"/>
+  <text x="160" y="155" text-anchor="middle" fill="#F2F0ED" font-family="Outfit, sans-serif" font-size="16">React pages</text>
+  <text x="160" y="180" text-anchor="middle" fill="#9A9AAE" font-size="12">Landing ’ Bond Card</text>
+  <text x="160" y="200" text-anchor="middle" fill="#9A9AAE" font-size="12">Invite · Shared · Premium</text>
+  <rect x="320" y="110" width="240" height="120" rx="12" fill="#16161F" stroke="rgba(255,255,255,0.1)"/>
+  <text x="440" y="155" text-anchor="middle" fill="#F2F0ED" font-size="16">vedic.ts</text>
+  <text x="440" y="180" text-anchor="middle" fill="#9A9AAE" font-size="12">Profile + Ashtakoota</text>
+  <text x="440" y="200" text-anchor="middle" fill="#9A9AAE" font-size="12">Daily bond weather</text>
+  <rect x="600" y="110" width="220" height="120" rx="12" fill="#16161F" stroke="rgba(255,255,255,0.1)"/>
+  <text x="710" y="155" text-anchor="middle" fill="#F2F0ED" font-size="16">storage.ts</text>
+  <text x="710" y="180" text-anchor="middle" fill="#9A9AAE" font-size="12">Profile · bonds</text>
+  <text x="710" y="200" text-anchor="middle" fill="#9A9AAE" font-size="12">Premium · quota</text>
+  <rect x="850" y="110" width="210" height="120" rx="12" fill="#16161F" stroke="rgba(255,255,255,0.1)"/>
+  <text x="955" y="155" text-anchor="middle" fill="#F2F0ED" font-size="16">share.ts</text>
+  <text x="955" y="180" text-anchor="middle" fill="#9A9AAE" font-size="12">Invite token</text>
+  <text x="955" y="200" text-anchor="middle" fill="#9A9AAE" font-size="12">Public Bond Card</text>
+  <path d="M160 230 L160 280 L955 280 L955 230" fill="none" stroke="#C06B5A" stroke-width="1.5"/>
+  <rect x="40" y="310" width="1020" height="250" rx="14" fill="#111118" stroke="rgba(232,168,73,0.25)"/>
+  <text x="60" y="350" fill="#E8A849" font-size="15" font-weight="700">Growth loop</text>
+  <text x="60" y="390" fill="#F2F0ED" font-size="14">A creates profile ’ copies invite URL (birth payload in hash) ’ B opens InvitePage</text>
+  <text x="60" y="418" fill="#F2F0ED" font-size="14">B onboards to unlock Bond Card ’ B can invite C  ·  shared /shared/:token is public curiosity</text>
+  <text x="60" y="460" fill="#E8A849" font-size="15" font-weight="700">Habit + revenue</text>
+  <text x="60" y="500" fill="#F2F0ED" font-size="14">Daily bond weather (free)  ·  7-day timeline + deep koota (Premium ¹199/mo)</text>
+  <text x="60" y="528" fill="#F2F0ED" font-size="14">Reports ¹299/¹499  ·  leftover questions deep-link to AstroLive live consults</text>
+</svg>

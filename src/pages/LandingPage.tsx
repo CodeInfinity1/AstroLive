@@ -35,24 +35,27 @@ export default function LandingPage() {
               <span className="orbit-center-icon">✦</span>
             </div>
           </div>
-          
-          <h1 className="landing-title">
-            Discover the <span className="text-gradient">cosmic chemistry</span> between you and anyone
-          </h1>
-          
-          <p className="landing-subtitle">
-            Vedic astrology meets modern social experience. Check your compatibility with friends, partners, and family — powered by ancient Nakshatra wisdom.
-          </p>
 
-          <button 
-            className="btn btn-primary btn-lg btn-full landing-cta"
-            onClick={() => navigate('/onboarding')}
-          >
-            Discover Your Cosmic Profile
-            <span className="cta-arrow">→</span>
-          </button>
-          
-          <p className="landing-cta-sub">Takes 30 seconds · Free · No sign-up required</p>
+          <div className="landing-hero-copy">
+            <p className="landing-kicker">Vedic Bond Cards · by AstroLive</p>
+            <h1 className="landing-title">
+              Compatibility that only exists <span className="text-gradient">when they join</span>
+            </h1>
+            
+            <p className="landing-subtitle">
+              Nakshatra turns kundli matching into a Bond Card you create with someone, share as a public object, and reopen because the weather of the bond changes every day.
+            </p>
+
+            <button 
+              className="btn btn-primary btn-lg btn-full landing-cta"
+              onClick={() => navigate('/onboarding')}
+            >
+              Create your Vedic profile
+              <span className="cta-arrow">→</span>
+            </button>
+            
+            <p className="landing-cta-sub">Takes 30 seconds · Free · No sign-up required</p>
+          </div>
         </section>
 
         {/* How it works */}

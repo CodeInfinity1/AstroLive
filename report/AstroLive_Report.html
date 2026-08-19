@@ -5,47 +5,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nakshatra by AstroLive — Product Challenge Report</title>
 <style>
-  @page { margin: 2cm; size: A4; }
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm;
+    @bottom-center {
+      content: "Nakshatra by AstroLive  ·  " counter(page);
+      font-size: 8pt;
+      color: #8a7a6a;
+    }
+  }
+  @page :first { @bottom-center { content: none; } }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: #1a1a1a; line-height: 1.7; font-size: 11pt; max-width: 210mm; margin: 0 auto; }
-  
-  .cover { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #1a1510 0%, #2d2118 50%, #1a1510 100%); color: #f5e6d3; page-break-after: always; padding: 3cm; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: #1a1a1a; line-height: 1.65; font-size: 10.5pt; max-width: 210mm; margin: 0 auto; padding: 12mm; }
+  .cover { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(135deg, #1a1510 0%, #2d2118 50%, #1a1510 100%); color: #f5e6d3; page-break-after: always; padding: 3cm; margin: -12mm -12mm 0; }
   .cover h1 { font-size: 36pt; font-weight: 300; letter-spacing: 4px; margin-bottom: 8px; }
   .cover .sub { font-size: 14pt; color: #c49a6c; margin-bottom: 40px; }
-  .cover .tagline { font-size: 13pt; color: #a08060; max-width: 420px; margin-bottom: 60px; }
+  .cover .tagline { font-size: 13pt; color: #a08060; max-width: 440px; margin-bottom: 48px; }
   .cover .meta { font-size: 10pt; color: #8a7a6a; }
   .cover .meta p { margin: 4px 0; }
   .cover .symbol { font-size: 72pt; margin-bottom: 20px; opacity: 0.6; }
-  
-  h2 { font-size: 16pt; color: #2d2118; border-bottom: 2px solid #c49a6c; padding-bottom: 6px; margin: 28px 0 14px; page-break-after: avoid; }
-  h3 { font-size: 12pt; color: #5a4a3a; margin: 16px 0 8px; }
-  p { margin-bottom: 10px; }
-  ul, ol { margin: 8px 0 12px 24px; }
-  li { margin-bottom: 4px; }
-  
+  .placeholder { border: 1px dashed #c49a6c; padding: 4px 10px; color: #c49a6c; }
+  h2 { font-size: 15pt; color: #2d2118; border-bottom: 2px solid #c49a6c; padding-bottom: 6px; margin: 22px 0 12px; page-break-after: avoid; }
+  h3 { font-size: 11.5pt; color: #5a4a3a; margin: 14px 0 8px; page-break-after: avoid; }
+  p { margin-bottom: 9px; }
+  ul, ol { margin: 8px 0 12px 22px; }
+  li { margin-bottom: 3px; }
   .page-break { page-break-before: always; }
-  
-  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 10pt; }
-  th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 9.5pt; }
+  th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
   th { background: #f5f0eb; color: #2d2118; font-weight: 600; }
-  
-  .highlight { background: #fdf8f3; border-left: 3px solid #c49a6c; padding: 12px 16px; margin: 14px 0; border-radius: 4px; }
-  .stat { display: inline-block; text-align: center; margin: 8px 16px; }
-  .stat-num { display: block; font-size: 20pt; font-weight: 700; color: #c49a6c; }
-  .stat-label { font-size: 9pt; color: #666; }
-  
-  .diagram { background: #faf6f2; border: 1px solid #e8ddd0; border-radius: 8px; padding: 16px; margin: 14px 0; text-align: center; font-size: 10pt; }
-  .diagram .flow { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
-  .diagram .step { background: #2d2118; color: #f5e6d3; padding: 8px 14px; border-radius: 6px; }
-  .diagram .arrow { color: #c49a6c; font-size: 16pt; }
-  
+  .highlight { background: #fdf8f3; border-left: 3px solid #c49a6c; padding: 12px 16px; margin: 12px 0; border-radius: 4px; }
+  .diagram { background: #faf6f2; border: 1px solid #e8ddd0; border-radius: 8px; padding: 14px; margin: 12px 0; text-align: center; font-size: 9.5pt; page-break-inside: avoid; }
+  .diagram .flow { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px; }
+  .diagram .step { background: #2d2118; color: #f5e6d3; padding: 7px 12px; border-radius: 6px; }
+  .diagram .arrow { color: #c49a6c; font-size: 14pt; }
+  figure { margin: 12px 0 16px; page-break-inside: avoid; }
+  figure img { width: 100%; max-height: 68mm; object-fit: contain; object-position: top; border: 1px solid #e8ddd0; border-radius: 6px; background: #0A0A0F; }
+  figcaption { font-size: 8.5pt; color: #666; margin-top: 6px; font-style: italic; }
+  .fig-row { display: flex; gap: 10px; }
+  .fig-row figure { flex: 1; }
+  .toc ol { margin-left: 22px; }
+  .toc li { margin-bottom: 5px; }
   .footnote { font-size: 9pt; color: #888; }
-  .ref { font-size: 9.5pt; }
-  .ref li { margin-bottom: 3px; }
-  
+  .ref { font-size: 9pt; }
+  .ref li { margin-bottom: 4px; }
+  .arch { font-family: ui-monospace, monospace; font-size: 8.5pt; text-align: left; line-height: 1.45; white-space: pre-wrap; }
   @media print {
-    body { max-width: none; }
-    .cover { height: auto; min-height: 100vh; }
+    body { max-width: none; padding: 0; }
+    .cover { margin: 0; min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
   }
 </style>
 </head>
@@ -59,12 +67,34 @@
   <p class="tagline">Vedic compatibility as a social product — turning AstroLive's single-user tools into viral Bond Cards that users create, share, and return to daily.</p>
   <div class="meta">
     <p>AstroLive Product Challenge — August 2026</p>
-    <p>Prototype: <strong>nakshatra-astrolive.vercel.app</strong></p>
-    <p>AI Tools Used: Cursor IDE, Claude (Anthropic)</p>
+    <p>Team: <span class="placeholder">[Team Name]</span> &nbsp;·&nbsp; Leader: <span class="placeholder">[Leader Name]</span></p>
+    <p>Prototype: <strong>https://nakshatra-astrolive.vercel.app</strong></p>
+    <p>Repository: <strong>https://github.com/CodeInfinity1/AstroLive</strong></p>
+    <p>Filename: AstroLive_TeamName_LeaderName.pdf</p>
   </div>
 </div>
 
-<!-- PAGE 2: EXECUTIVE SUMMARY + TEARDOWN -->
+<div class="page-break"></div>
+<h2>Contents</h2>
+<ol class="toc">
+  <li>Executive Summary</li>
+  <li>AstroLive Teardown</li>
+  <li>Problem &amp; Opportunity</li>
+  <li>Competitive Analysis</li>
+  <li>Proposed Solution: Nakshatra</li>
+  <li>Product Design &amp; User Journey (with prototype evidence)</li>
+  <li>Structural Virality</li>
+  <li>Habit Formation &amp; Retention</li>
+  <li>Monetization Strategy</li>
+  <li>Technical Architecture, Scalability &amp; Feasibility</li>
+  <li>Success Metrics &amp; Expected Impact</li>
+  <li>Risks, Limitations &amp; Roadmap</li>
+  <li>Conclusion</li>
+  <li>References &amp; Source Registry</li>
+  <li>AI Tools Used</li>
+</ol>
+<p class="footnote">North-star metric proposed: invite-to-onboard conversion × bonds created per new user (a proxy for viral coefficient K).</p>
+
 <div class="page-break"></div>
 
 <h2>1. Executive Summary</h2>
@@ -196,10 +226,51 @@
   <tr><td>Shared Bond</td><td>Public Bond Card view</td><td>Curiosity → onboarding</td></tr>
 </table>
 
-<!-- PAGE 5: VIRALITY & HABIT -->
+<div class="page-break"></div>
+<h2>6. Product Design &amp; User Journey</h2>
+<p>The prototype is a fully interactive website (not a slide deck). A judge can complete the core loop in a few minutes: landing → 30-second onboarding → profile → invite or manual check → Bond Card → share → recipient invite landing → premium unlock.</p>
+
+<figure>
+  <img src="img/landing.png" alt="Nakshatra landing page on mobile">
+  <figcaption>Figure 1. Landing USP: compatibility only exists when the second person joins. Source: prototype, 19 Aug 2026.</figcaption>
+</figure>
+<div class="fig-row">
+<figure>
+  <img src="img/onboarding.png" alt="Onboarding name step">
+  <figcaption>Figure 2. Onboarding 1/4 — identity is social from the first screen.</figcaption>
+</figure>
+<figure>
+  <img src="img/invite.png" alt="Invite landing for recipient">
+  <figcaption>Figure 3. Recipient invite: Ananya’s Moon/Nakshatra before any signup.</figcaption>
+</figure>
+</div>
+<figure>
+  <img src="img/profile.png" alt="Cosmic profile with daily weather">
+  <figcaption>Figure 4. Personalized result: Moon, Nakshatra, and today’s cosmic weather. Share copies an invite URL.</figcaption>
+</figure>
+<figure>
+  <img src="img/bond-result.png" alt="Bond Card result with Ashtakoota scores">
+  <figcaption>Figure 5. Bond Card: 8 Ashtakoota dimensions, daily forecast, share, and Premium unlock.</figcaption>
+</figure>
+<div class="fig-row">
+<figure>
+  <img src="img/shared-bond.png" alt="Public shared Bond Card">
+  <figcaption>Figure 6. Public shared card — curiosity CTA to create a profile.</figcaption>
+</figure>
+<figure>
+  <img src="img/premium.png" alt="Premium plans">
+  <figcaption>Figure 7. Free vs Premium, ₹199/mo, plus one-time reports. Pay is simulated; unlock is real.</figcaption>
+</figure>
+</div>
+<figure>
+  <img src="img/landing-desktop.png" alt="Landing page on desktop">
+  <figcaption>Figure 8. Desktop (1440px): two-column hero, four-column features — not a shrunk phone frame.</figcaption>
+</figure>
+
+<!-- PAGE: VIRALITY -->
 <div class="page-break"></div>
 
-<h2>6. Structural Virality</h2>
+<h2>7. Structural Virality</h2>
 
 <p>Nakshatra's viral loop is not a "Share" button. It is embedded in the product's core action: checking compatibility.</p>
 
@@ -237,7 +308,7 @@
   <tr><td>Network growth</td><td>Dead end</td><td>Recipient invites their own contacts</td></tr>
 </table>
 
-<h2>7. Habit Formation & Retention</h2>
+<h2>8. Habit Formation & Retention</h2>
 
 <p>Users return to Nakshatra not because of notification spam, but because the product's content is <em>time-sensitive and relationship-specific</em>.</p>
 
@@ -262,11 +333,11 @@
 <!-- PAGE 6: MONETIZATION -->
 <div class="page-break"></div>
 
-<h2>8. Monetization Strategy</h2>
+<h2>9. Monetization Strategy</h2>
 
 <p>Nakshatra introduces three revenue layers that complement (not replace) AstroLive's per-minute consultation model:</p>
 
-<h3>8.1 Premium Subscription</h3>
+<h3>9.1 Premium Subscription</h3>
 <table>
   <tr><th>Tier</th><th>Price</th><th>Features</th></tr>
   <tr><td>Free</td><td>₹0</td><td>Profile, 3 compatibility checks, daily forecast, shareable Bond Cards</td></tr>
@@ -274,21 +345,38 @@
   <tr><td>Premium Annual</td><td>₹1,199/yr</td><td>Same + 2 months free</td></tr>
 </table>
 
-<h3>8.2 One-Time Reports</h3>
+<h3>9.2 One-Time Reports</h3>
 <table>
   <tr><th>Report</th><th>Price</th><th>Content</th></tr>
   <tr><td>Couple Deep Dive</td><td>₹299</td><td>Full Ashtakoota analysis, remedies, annual forecast for the pair</td></tr>
   <tr><td>Family Map</td><td>₹499</td><td>Multi-person household compatibility analysis</td></tr>
 </table>
 
-<h3>8.3 Strategic Upsell to AstroLive Live Consultations</h3>
+<h3>9.3 Strategic Upsell to AstroLive Live Consultations</h3>
 <p>Bond Cards surface specific questions ("Your Nadi score is 0 — what does this mean for health compatibility?"). Nakshatra can deep-link to AstroLive's live astrologer marketplace with context, creating a high-intent consultation lead. This is the <strong>bridge product</strong> between free social engagement and paid human guidance.</p>
 
 <div class="highlight">
 <strong>Revenue model advantage:</strong> AstroLive's current model requires astrologer supply for every transaction (high marginal cost). Nakshatra's subscriptions and digital reports have near-zero marginal cost, improving unit economics while increasing engagement with the core consult product.
 </div>
 
-<h2>9. Technical Feasibility</h2>
+<div class="page-break"></div>
+<h2>10. Technical Architecture, Scalability &amp; Feasibility</h2>
+
+<div class="diagram">
+  <p style="font-weight:600; margin-bottom:10px;">Prototype architecture (static, no backend)</p>
+  <div class="arch">Browser
+  ├─ HashRouter (Vite + React 19 + TypeScript)
+  ├─ Pages: landing, onboarding, profile, compatibility,
+  │         bond result/list/detail, invite, shared, premium, report
+  ├─ engine/vedic.ts  → deterministic Moon, Nakshatra, Ashtakoota
+  ├─ store/storage.ts → localStorage profile, bonds, premium, quota
+  └─ store/share.ts   → base64url invite + public Bond Card tokens
+
+Viral path: User A invite URL → User B InvitePage → onboarding
+             → findOrCreateBond (does not consume free quota)
+Habit path: getDailyForecast / getBondDailyInsight keyed to today's date
+Revenue:    isPremium() unlocks deep insights + 7-day timeline</div>
+</div>
 
 <h3>Prototype (Current)</h3>
 <ul>
@@ -313,7 +401,7 @@
 <!-- PAGE 7: METRICS & IMPACT -->
 <div class="page-break"></div>
 
-<h2>10. Success Metrics</h2>
+<h2>11. Success Metrics</h2>
 
 <table>
   <tr><th>Metric</th><th>Definition</th><th>Target (6 months)</th></tr>
@@ -327,7 +415,7 @@
   <tr><td>Shared cards/user</td><td>Public Bond Cards shared per active user</td><td>> 1.5</td></tr>
 </table>
 
-<h2>11. Expected Business Impact</h2>
+<h2>12. Expected Business Impact</h2>
 
 <h3>For AstroLive</h3>
 <ul>
@@ -347,7 +435,9 @@ If Nakshatra achieves K > 1 with 10,000 seed users and a 5% premium conversion r
 </ul>
 </div>
 
-<h2>12. Risks & Mitigation</h2>
+<p class="footnote">Impact figures above are <strong>illustrative scenarios</strong>, not forecasts. They assume K≈1 after seed, 5% premium attach, and an 8% consult attach. They should be treated as a planning model for AstroLive, not as claimed traction.</p>
+
+<h2>13. Risks, Limitations &amp; Roadmap</h2>
 
 <table>
   <tr><th>Risk</th><th>Severity</th><th>Mitigation</th></tr>
@@ -358,10 +448,17 @@ If Nakshatra achieves K > 1 with 10,000 seed users and a 5% premium conversion r
   <tr><td>Cannibalization of consults</td><td>Low</td><td>Nakshatra generates consult demand (questions from Bond Card scores), doesn't replace it</td></tr>
 </table>
 
-<!-- PAGE 8: CONCLUSION & REFERENCES -->
-<div class="page-break"></div>
+<h3>Roadmap (post-challenge)</h3>
+<ol>
+  <li>Replace URL-encoded birth payloads with server invite IDs and hashed charts.</li>
+  <li>Swiss Ephemeris (or equivalent) for production Guna Milan; keep the Bond Card UX unchanged.</li>
+  <li>WhatsApp share sheets with OG previews of the Bond Card (score + two names).</li>
+  <li>Phone OTP + sync so bonds survive device change.</li>
+  <li>Razorpay/Cashfree for Premium; deep-link into AstroLive live chat with Bond context.</li>
+</ol>
 
-<h2>13. Conclusion</h2>
+<div class="page-break"></div>
+<h2>14. Conclusion</h2>
 
 <p>AstroLive has built a strong foundation in the rapidly growing Indian astrology market with its live consultation platform. However, its current model lacks structural virality, social engagement, and scalable digital revenue.</p>
 
@@ -375,31 +472,47 @@ If Nakshatra achieves K > 1 with 10,000 seed users and a 5% premium conversion r
 
 <p>The working prototype at <strong>nakshatra-astrolive.vercel.app</strong> demonstrates the complete user flow: onboarding, compatibility, Bond Cards, daily forecasts, invite loop, shared cards, and premium features.</p>
 
-<h2>14. References</h2>
+<h2>15. References</h2>
 
 <ol class="ref">
-  <li>[1] CXOToday — "Chingari founders foray into $350 billion Faith and Astrology market with AstroLive." <em>cxotoday.com/press-release/chingari-founders-foray-into-350-billion-faith-and-astrology-market-with-astrolive/</em></li>
-  <li>[2] MarkNtel Advisors — "India Astrology App Market Growth, Size, Share & Companies [2030]." <em>marknteladvisors.com/research-library/india-astrology-app-market.html</em></li>
-  <li>[3] Astrofite — "Astrology App Industry in India 2026 – How a ₹1,300 Crore Market Is Changing Spiritual Life." <em>astrofite.com/astrology-app-industry-in-india-2026/</em></li>
-  <li>[4] Upstox — "Stars on demand: How digital astrology is booming in India?" <em>upstox.com/news/upstox-originals/investing/stars-on-demand-how-digital-astrology-is-booming-in-india/article-167792/</em></li>
-  <li>[5] AstroLive — Official website. <em>astrolive.app</em> (accessed August 2026)</li>
-  <li>[6] AstroLive — About Us. <em>astrolive.live/about-us</em> (accessed August 2026)</li>
-  <li>[7] Tracxn — AstroLive company profile. <em>tracxn.com/d/companies/astrolive/</em></li>
-  <li>[8] Google Play Store — AstroLive listing. <em>play.google.com/store/apps/details?id=app.astrolive</em></li>
-  <li>[9] Apple App Store — AstroLive listing. <em>apps.apple.com/us/app/astrolive-talk-to-astrologer/id6484162351</em></li>
+  <li>[1] CXOToday — “Chingari founders foray into $350 billion Faith and Astrology market with AstroLive.” <em>https://cxotoday.com/press-release/chingari-founders-foray-into-350-billion-faith-and-astrology-market-with-astrolive/</em> (accessed 19 Aug 2026)</li>
+  <li>[2] MarkNtel Advisors — “India Astrology App Market Growth, Size, Share &amp; Companies [2030].” <em>https://www.marknteladvisors.com/research-library/india-astrology-app-market.html</em> (accessed 19 Aug 2026). Claim: USD 163M (2024) to USD 1,797M (2030), ~49% CAGR.</li>
+  <li>[3] Astrofite — “Astrology App Industry in India 2026.” <em>https://astrofite.com/astrology-app-industry-in-india-2026/</em> (accessed 19 Aug 2026). Industry commentary (compatibility share, AstroTalk revenue, tier 2/3 mix). Treat as secondary, not audited financials.</li>
+  <li>[4] Upstox — “Stars on demand: How digital astrology is booming in India?” <em>https://www.upstox.com/news/upstox-originals/investing/stars-on-demand-how-digital-astrology-is-booming-in-india/article-167792/</em> (accessed 19 Aug 2026)</li>
+  <li>[5] AstroLive — Official website. <em>https://astrolive.app</em> (accessed 19 Aug 2026). Product surface: consult rates, kundli match, horoscope, pooja, shop.</li>
+  <li>[6] AstroLive — About. <em>https://astrolive.live/about-us</em> (accessed 19 Aug 2026)</li>
+  <li>[7] Tracxn — AstroLive company profile. <em>https://tracxn.com/d/companies/astrolive/</em> (accessed 19 Aug 2026). Bengaluru, founded 2023 listing, competitors Astrotalk / InstaAstro.</li>
+  <li>[8] Google Play — AstroLive. <em>https://play.google.com/store/apps/details?id=app.astrolive</em> (accessed 19 Aug 2026)</li>
+  <li>[9] Apple App Store — AstroLive. <em>https://apps.apple.com/us/app/astrolive-talk-to-astrologer/id6484162351</em> (accessed 19 Aug 2026)</li>
+  <li>[10] Nakshatra prototype (this submission). <em>https://nakshatra-astrolive.vercel.app</em> (19 Aug 2026)</li>
+  <li>[11] Source repository. <em>https://github.com/CodeInfinity1/AstroLive</em></li>
 </ol>
 
-<h2>15. AI Tools Used</h2>
-
+<h3>Source registry</h3>
 <table>
-  <tr><th>Tool</th><th>Usage</th></tr>
-  <tr><td>Cursor IDE (with Claude, Anthropic)</td><td>Prototype development — React components, Vedic engine logic, CSS styling, routing, share/invite system, deployment automation</td></tr>
-  <tr><td>Claude (Anthropic)</td><td>Product strategy, competitive analysis, report drafting, research synthesis</td></tr>
+  <tr><th>Source</th><th>Claim supported</th><th>Date accessed</th></tr>
+  <tr><td>[5] astrolive.app</td><td>Consult-first product; kundli match as a tool, not a social object; ₹10/₹15 per-minute CTAs</td><td>19 Aug 2026</td></tr>
+  <tr><td>[1] CXOToday</td><td>Company launch narrative (Chingari / Tech4Billion; paid-user claims in press copy)</td><td>19 Aug 2026</td></tr>
+  <tr><td>[2] MarkNtel</td><td>India astrology app market size and CAGR</td><td>19 Aug 2026</td></tr>
+  <tr><td>[3] Astrofite</td><td>Secondary market color (matrimonial mix, leader revenue). Not independently verified here.</td><td>19 Aug 2026</td></tr>
+  <tr><td>[7] Tracxn</td><td>Company meta (location, competitor set)</td><td>19 Aug 2026</td></tr>
 </table>
 
-<p class="footnote" style="margin-top:40px; text-align:center;">
+<h2>16. AI Tools Used</h2>
+<p>Only tools that actually contributed to this submission are listed. No tool is credited for work it did not perform.</p>
+<table>
+  <tr><th>Tool</th><th>Usage</th></tr>
+  <tr><td>Cursor IDE</td><td>Primary development environment for the prototype, report HTML, and submission packaging.</td></tr>
+  <tr><td>Claude (Anthropic), via Cursor — prior sessions</td><td>Product thesis (Bond Cards), React/TypeScript implementation, Vedic mock engine, invite/share URLs, Vercel deploy, first draft of this report, research notes.</td></tr>
+  <tr><td>Cursor Grok 4.6 — this session</td><td>Repository audit; responsive tablet/desktop layouts; empty-state invite CTAs; screenshot capture; print-ready PDF; README and submission folder; continuity docs.</td></tr>
+</table>
+<p>No generative images were used for product UI. Screenshots in this PDF are from the running prototype (Brave headless, 19 Aug 2026).</p>
+
+<p class="footnote" style="margin-top:28px; text-align:center;">
   — End of Report —<br>
-  Prototype: nakshatra-astrolive.vercel.app | Repository: github.com/CodeInfinity1/AstroLive
+  Prototype: https://nakshatra-astrolive.vercel.app<br>
+  Repository: https://github.com/CodeInfinity1/AstroLive<br>
+  PDF filename: AstroLive_TeamName_LeaderName.pdf (replace placeholders when team/leader names are provided)
 </p>
 
 </body>

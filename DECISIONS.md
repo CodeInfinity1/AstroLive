@@ -21,8 +21,14 @@ Chosen in `main.tsx` already. Kept so GitHub Pages / static Vercel work without 
 ## Monetization beyond minutes
 Subscription + one-time household/couple reports, with copy that routes leftover high-intent questions to AstroLive live astrologers.
 
+## Visual system
+Copper/amber on near-black, Outfit/Inter. Kept.
+
+## Responsive layout (19 Aug 2026)
+Previously `#root` was capped at 480px on desktop (phone chrome). Challenge judging requires tablet and desktop viewports. Layout tokens now widen: landing up to ~1120px with a two-column hero; app containers ~680–920px. Design language unchanged.
+
 ## Do not change
-- Visual system (copper/amber on near-black, Outfit/Inter)
 - Core page set and route names already in use
 - Product name Nakshatra
-- Mobile-column max-width ~480px
+- HashRouter without a deploy plan
+- Mock engine → “AI astrologer”

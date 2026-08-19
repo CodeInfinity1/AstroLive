@@ -60,6 +60,21 @@
   z-index: 1;
 }
 
+.landing-hero-copy {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.landing-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-md);
+}
+
 .landing-title {
   font-size: 2rem;
   font-weight: 700;
@@ -331,4 +346,70 @@
   color: var(--text-tertiary);
   margin-top: var(--space-md);
   line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .landing-title {
+    font-size: 2.4rem;
+  }
+
+  .landing-subtitle {
+    max-width: 520px;
+    font-size: 1.02rem;
+  }
+
+  .landing-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-lg);
+  }
+
+  .landing-step {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .landing-features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .landing-cta.btn-full,
+  .landing-final-cta .btn-full {
+    width: auto;
+    min-width: 320px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .landing-hero {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: var(--space-2xl);
+    text-align: left;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+  }
+
+  .landing-hero-copy {
+    text-align: left;
+  }
+
+  .landing-orbit {
+    margin: 0;
+  }
+
+  .landing-subtitle {
+    margin-left: 0;
+  }
+
+  .landing-features {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .landing-final-cta h2 {
+    font-size: 2rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
