@@ -72,9 +72,9 @@ Use **Not you? Reset profile** at the bottom of Profile if a previous demo sessi
 
 ## Report
 
-Print-ready PDF (placeholders until team/leader names are provided):
+Print-ready PDF:
 
-`submission/AstroLive_TeamName_LeaderName.pdf`
+`submission/AstroLive_Vrolo_VarshamGupta.pdf`
 
 HTML source: `report/AstroLive_Report.html`
 

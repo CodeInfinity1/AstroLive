@@ -3,7 +3,7 @@
 ## Current State
 Nakshatra by AstroLive is **deployed** at https://nakshatra-astrolive.vercel.app.  
 GitHub: https://github.com/CodeInfinity1/AstroLive.  
-Submission PDF: `submission/AstroLive_TeamName_LeaderName.pdf` (placeholders for team/leader).
+Submission PDF: `submission/AstroLive_Vrolo_VarshamGupta.pdf` (Team Vrolo, Leader Varsham Gupta).
 
 ## Product
 Social Vedic compatibility: Bond Cards (Ashtakoota 8 dimensions), invite links encoding inviter data, shareable public cards, daily bond weather, Premium + one-time reports.
@@ -29,7 +29,7 @@ Social Vedic compatibility: Bond Cards (Ashtakoota 8 dimensions), invite links e
 - Engine is deterministic mock, not ephemeris
 - Invite URLs contain birth metadata (prototype only)
 - No real payments / no backend
-- Team/leader names still placeholders on the PDF filename
+- Team/leader names set: Vrolo / Varsham Gupta
 
 ## Do NOT change
 - Product name Nakshatra / Bond Card thesis
@@ -38,13 +38,11 @@ Social Vedic compatibility: Bond Cards (Ashtakoota 8 dimensions), invite links e
 - Restarting as a consult marketplace clone
 
 ## Next Claude / teammate
-1. Replace `[Team Name]` / `[Leader Name]` and rename the PDF
-2. Push if this session’s commit is not yet on `main` (Vercel auto-deploys)
-3. Submit portal: prototype URL + GitHub + PDF before **20 Aug 2026, 11:59 PM IST**
-4. Optional: recapture Couple Deep Dive after Buy so report screenshot is unlocked
+1. Submit portal: prototype URL + GitHub + `AstroLive_Vrolo_VarshamGupta.pdf` before **20 Aug 2026, 11:59 PM IST**
+2. Confirm latest `main` is on Vercel after any push
 
 ## Files that matter
 - `src/index.css` — responsive system
 - `src/pages/LandingPage.*` — USP
 - `report/AstroLive_Report.html` — report source
-- `submission/AstroLive_TeamName_LeaderName.pdf` — deliverable
+- `submission/AstroLive_Vrolo_VarshamGupta.pdf` — deliverable

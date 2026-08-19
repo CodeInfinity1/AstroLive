@@ -4,9 +4,9 @@
 
 - Prototype: https://nakshatra-astrolive.vercel.app
 - Repository: https://github.com/CodeInfinity1/AstroLive
-- Report PDF: `AstroLive_TeamName_LeaderName.pdf` (this folder)
+- Report PDF: `AstroLive_Vrolo_VarshamGupta.pdf` (this folder)
 
-Team name and leader name are **placeholders**. Rename the PDF when those are confirmed.
+Team: **Vrolo** · Leader: **Varsham Gupta**
 
 ## Checklist
 

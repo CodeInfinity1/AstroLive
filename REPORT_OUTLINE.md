@@ -1,6 +1,6 @@
 # REPORT OUTLINE
 
-Target filename (do not invent names): `AstroLive_TeamName_LeaderName.pdf` — fill team/leader only when known.
+Filename: `AstroLive_Vrolo_VarshamGupta.pdf` (team Vrolo, leader Varsham Gupta).
 
 Minimum 8 pages. Prototype screenshots from the running app. Cite RESEARCH.md sources. Cite AI tools actually used (Cursor / Claude / Grok in this repo’s sessions).
 
@@ -32,4 +32,4 @@ Minimum 8 pages. Prototype screenshots from the running app. Cite RESEARCH.md so
 - [ ] Report page
 
 ## Status
-PDF generated at `submission/AstroLive_TeamName_LeaderName.pdf` from `report/AstroLive_Report.html`. Screenshots captured from the prototype on 19 Aug 2026. Team/leader names remain placeholders.
+PDF generated at `submission/AstroLive_Vrolo_VarshamGupta.pdf`. Laptop screenshots (1440×900). Team Vrolo, leader Varsham Gupta.

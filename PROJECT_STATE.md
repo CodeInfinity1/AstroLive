@@ -17,4 +17,4 @@ LIVE: https://nakshatra-astrolive.vercel.app
 GitHub: https://github.com/CodeInfinity1/AstroLive
 
 ## Report
-`submission/AstroLive_TeamName_LeaderName.pdf` generated from `report/AstroLive_Report.html` (Brave headless print). Team/leader still placeholders.
+`submission/AstroLive_Vrolo_VarshamGupta.pdf` generated from `report/AstroLive_Report.html`. Team Vrolo, leader Varsham Gupta. Screenshots are laptop (1440×900) viewports.

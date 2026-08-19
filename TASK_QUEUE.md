@@ -11,7 +11,8 @@
 - [x] README + submission folder
 
 ## P1
-- [ ] Rename PDF when team/leader names are known
+- [x] Rename PDF: AstroLive_Vrolo_VarshamGupta.pdf
+- [x] Replace mobile report screenshots with laptop viewports
 - [ ] Confirm latest `main` is deployed on Vercel after push
 - [ ] Submit on portal before 20 Aug 2026 11:59 PM IST
 
