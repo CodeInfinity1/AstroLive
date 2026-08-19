@@ -1,0 +1,36 @@
+.report-page {
+  padding-top: var(--space-md);
+}
+
+.report-back {
+  color: var(--text-secondary);
+  margin: var(--space-md) 0;
+  font-size: 0.9rem;
+}
+
+.report-page h1 {
+  font-size: 1.6rem;
+  margin: var(--space-md) 0 var(--space-sm);
+}
+
+.report-lead {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.report-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.report-body h2 {
+  font-size: 1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.report-body p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  margin-bottom: 8px;
+}

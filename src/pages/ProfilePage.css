@@ -1,0 +1,296 @@
+.profile-page {
+  padding-top: var(--space-md);
+}
+
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--space-md) 0 var(--space-lg);
+}
+
+.profile-greeting {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* Cosmic Card */
+.cosmic-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-bottom: var(--space-xl);
+}
+
+.cosmic-card-glow {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-gradient);
+  opacity: 0.08;
+}
+
+.cosmic-card-content {
+  position: relative;
+  padding: var(--space-lg);
+  background: rgba(22, 22, 31, 0.85);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(10px);
+}
+
+.cosmic-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.cosmic-card-logo {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--text-tertiary);
+}
+
+.cosmic-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.cosmic-card-sign,
+.cosmic-card-nakshatra {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.cosmic-sign-symbol {
+  font-size: 2.2rem;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gradient-subtle);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+}
+
+.cosmic-nakshatra-star {
+  font-size: 1.8rem;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(232,168,73,0.08);
+  border: 1px solid rgba(232,168,73,0.15);
+  border-radius: var(--radius-md);
+}
+
+.cosmic-sign-label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.cosmic-sign-name {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cosmic-sign-detail {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.cosmic-card-row {
+  display: flex;
+  gap: var(--space-sm);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.cosmic-card-item {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.cosmic-item-symbol {
+  font-size: 1.2rem;
+}
+
+.cosmic-item-label {
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cosmic-item-value {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cosmic-card-footer {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+}
+
+/* Sections */
+.profile-section {
+  margin-bottom: var(--space-xl);
+}
+
+.profile-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-md);
+}
+
+/* Traits */
+.traits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.trait-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.trait-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+}
+
+/* Forecast */
+.forecast-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.forecast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.forecast-date {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.forecast-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Planets */
+.planets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: var(--space-sm);
+}
+
+.planet-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.planet-name {
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.planet-sign {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.planet-degree {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.profile-disclaimer {
+  font-size: 0.7rem;
+  color: var(--text-tertiary);
+  margin-top: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+}
+
+/* CTA */
+.profile-cta {
+  background: var(--accent-gradient-subtle);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.profile-cta h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.profile-cta p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}

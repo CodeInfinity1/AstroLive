@@ -1,0 +1,107 @@
+.invite-page {
+  padding-bottom: var(--space-3xl);
+}
+
+.invite-ambient {
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(232, 168, 73, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.invite-brand {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: var(--space-lg) 0;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--text-tertiary);
+}
+
+.invite-card {
+  margin-top: var(--space-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+}
+
+.invite-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.invite-card h1 {
+  font-size: 1.7rem;
+  margin-bottom: var(--space-md);
+}
+
+.invite-sub {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-xl);
+}
+
+.invite-person {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  background: var(--bg-elevated);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.invite-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  color: #0A0A0F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.invite-person strong {
+  display: block;
+}
+
+.invite-person span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.invite-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-top: var(--space-md);
+}
+
+.invite-empty {
+  text-align: center;
+  padding-top: 30vh;
+}
+
+.invite-empty h1 {
+  margin-bottom: var(--space-md);
+}
+
+.invite-empty p {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}

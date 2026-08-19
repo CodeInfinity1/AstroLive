@@ -1,0 +1,14 @@
+.score-ring-percent {
+  font-size: 0.5em;
+  opacity: 0.6;
+  margin-left: 1px;
+}
+
+.score-ring-sublabel {
+  display: block;
+  font-size: 0.35em;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-top: 2px;
+  text-align: center;
+}

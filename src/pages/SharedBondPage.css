@@ -1,0 +1,24 @@
+.shared-kicker {
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding-top: var(--space-lg);
+}
+
+.shared-cta {
+  margin: var(--space-xl) 0 var(--space-2xl);
+  text-align: center;
+}
+
+.shared-cta h2 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.shared-cta p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-lg);
+}
